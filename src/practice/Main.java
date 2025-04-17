@@ -36,7 +36,7 @@ public class Main {
         //스캐너 생성
         Scanner scanner = new Scanner(System.in);
 
-        // boolean 정의
+        // boolean , int 정의
         boolean bool1 = true;
         int int1 = 0;
         // 반복문 while 사용해서 bool1 = true 일떄 if 값까지 진행 / false 일데 if else 값 진행
@@ -65,7 +65,6 @@ public class Main {
             }
         }
 
-
         // ㅁ 사칙연산 기호(+,-,*,/) 를 입력받기
         //    ㅁScanner를 사용하여 사칙연산 기호를 전달 받을 수 있습니다.
         //    ㅁ사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다. ( charAt(0) )
@@ -85,7 +84,6 @@ public class Main {
             }
         }
 
-
         // ㅁ 위에서 입력받은 양의 정수 2개와 사칙연산 기호를 사용하여 연산을 진행한 후 결과값을 출력하기
         //     ㅁ 키워드 : if switch
         //     ㅁ 사칙연산 기호에 맞는 연산자를 사용하여 연산을 진행합니다.
@@ -102,11 +100,14 @@ public class Main {
         } else if (char1 == '*') {
             System.out.println(int1 * int2);
         } else if (char1 == '/') {
-            if(int2 == 0) {
+            if(int2 != 0) {  // 0으로 나눌 시 경고창 필요로 if문 추가
+                double double1 = int2; // 나누기 진행 시 소수점 표시 위해 업캐스팅 진행.
+                System.out.println(int1 / double1);
+            } else {
                 System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
             }
-            System.out.println(int1 / int2);
         }
+
 
 
     }
