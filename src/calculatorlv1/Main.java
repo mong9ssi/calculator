@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Hello, Calculator!");
 
         // 1. 클래스 없이 기본적인 연산을 수행할 수 있는 계산기 만들기.
         // ㅁ 양의 정수(0포함)를 입력받기.
