@@ -91,20 +91,39 @@ public class Main {
 
             //   int1 = 첫번째 입력받은 수 // int2 = 두번째 입력받은 수 // char1 = 입력받은 사칙연산
 
+//            if (char1 == '+') {
+//                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 + int2));
+//            } else if (char1 == '-') {
+//                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 - int2));
+//            } else if (char1 == '*') {
+//                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 * int2));
+//            } else if (char1 == '/') {
+//                if (int2 != 0) {  // 0으로 나눌 시 경고창 필요로 if문 추가
+//                    double double1 = int2; // 나누기 진행 시 소수점 표시 위해 업캐스팅 진행.
+//                    System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 / double1));
+//                } else {
+//                    System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
+//                }
+//            }
             if (char1 == '+') {
-                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 + int2));
+                int result = int1 + int2 ;
+                System.out.println("결과 : " + result);
             } else if (char1 == '-') {
-                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 - int2));
+                int result = int1 - int2 ;
+                System.out.println("결과 : " + result);
             } else if (char1 == '*') {
-                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 * int2));
+                int result = int1 * int2;
+                System.out.println("결과 : " + result);
             } else if (char1 == '/') {
-                if (int2 != 0) {  // 0으로 나눌 시 경고창 필요로 if문 추가
-                    double double1 = int2; // 나누기 진행 시 소수점 표시 위해 업캐스팅 진행.
-                    System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 / double1));
+                if (int2 !=0 ) {
+                    double double1 = int2;
+                    double result = int1 / double1;
+                    System.out.println("결과 : " + result);
                 } else {
                     System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
                 }
             }
+
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료 / 아무키나 입력시 처음으로)");
             String string1 = scanner.next();
@@ -115,8 +134,6 @@ public class Main {
                 System.out.println("처음으로 돌아갑니다.");
             }
         }
-
-
 
 
     }
