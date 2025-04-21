@@ -15,6 +15,9 @@ public class Calculator {
         this.string1 = string1;
     }
 
+    public Calculator(int mainInt1, int mainInt2, char mainChar1) {
+    }
+
     // 3. 기능
     // 덧셈
     int sum (int int1 , int int2) {
@@ -32,9 +35,9 @@ public class Calculator {
         return result;
     }
     //나눗셈
-    int div (int int1 , int int2) {
+    void div (int int1 , int int2) {
         int result = int1 / int2;
-        return result;
+
     }
 
 
