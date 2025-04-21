@@ -116,8 +116,8 @@ public class Main {
                 System.out.println("결과 : " + result);
             } else if (char1 == '/') {
                 if (int2 !=0 ) {
-                    double doubbl1 = int2;
-                    double result = int1 / int2;
+                    double double1 = int2;
+                    double result = int1 / double1;
                     System.out.println("결과 : " + result);
                 } else {
                     System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
