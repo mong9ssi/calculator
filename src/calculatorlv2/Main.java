@@ -62,27 +62,46 @@ public class Main {
             //       ex) “나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.“
 
             //   int1 = 첫번째 입력받은 수 // int2 = 두번째 입력받은 수 // char1 = 입력받은 사칙연산
-
-
-            if (char1 == '+') {
-                int result = int1 + int2 ;
-                System.out.println("결과 : " + result);
+//            if (char1 == '+') {
+//                int result = int1 + int2 ;
+//                System.out.println("결과 : " + result);
+//            } else if (char1 == '-') {
+//                int result = int1 - int2 ;
+//                System.out.println("결과 : " + result);
+//            } else if (char1 == '*') {
+//                int result = int1 * int2;
+//                System.out.println("결과 : " + result);
+//            } else if (char1 == '/') {
+//                if (int2 !=0 ) {
+//                    double double1 = int2;
+//                    double result = int1 / double1;
+//                    System.out.println("결과 : " + result);
+//                } else {
+//                    System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
+//                }
+//            }
+            if (char1 == '+'){
+                Calculator calculator = new Calculator(int1 , int2);
+                int result = calculator.sum(int1 , int2);
+                System.out.println("결과 : " + int1 + " + " + int2 + " = " + result);
             } else if (char1 == '-') {
-                int result = int1 - int2 ;
-                System.out.println("결과 : " + result);
+                Calculator calculator = new Calculator(int1 , int2);
+                int result = calculator.sub(int1 , int2);
+                System.out.println("결과 : " + int1 + " - " + int2 + " = " + result);
             } else if (char1 == '*') {
-                int result = int1 * int2;
-                System.out.println("결과 : " + result);
+                Calculator calculator = new Calculator(int1 , int2);
+                int result = calculator.mul(int1 , int2);
+                System.out.println("결과 : " + int1 + " * " + int2 + " = " + result);
             } else if (char1 == '/') {
-                if (int2 !=0 ) {
+                if (int2 != 0) {
                     double double1 = int2;
-                    double result = int1 / double1;
-                    System.out.println("결과 : " + result);
+                    Calculator calculator = new Calculator(int1 , (int) double1);
+                    double result = calculator.div(int1 , double1);
+                    System.out.println("결과 : " + int1 + " / " + int2 + " = " + result);
                 } else {
                     System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
                 }
             }
-
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료 / 아무키나 입력시 처음으로)");
             String string1 = scanner.next();
