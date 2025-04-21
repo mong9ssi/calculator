@@ -6,35 +6,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, Calculator!");
 
-//         1. 클래스 없이 기본적인 연산을 수행할 수 있는 계산기 만들기.
-//         ㅁ 양의 정수(0포함)를 입력받기.
-//            ㅁScanner 를 사용하여 양의 정수 2개(0포함) 를 전달 받을 수 있습니다.
-//            ㅁ양의 정수는 각각 하나씩 전달 받습니다.
-//            ㅁ양의 정수는 적합한 타입으로 선언한 변수에 저장합니다.
-//
-//
-//        //스캐너 생성
-//        Scanner scanner = new Scanner(System.in);
-
-//        // 첫번째 숫자 입력하는 부분 ( 양의 정수 0 포함 )
-//        System.out.println("원하는 첫번째 숫자를 입력하세요 : ");
-//        int int1 = scanner.nextInt();
-//        if(int1 < 0) {
-//            System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요.");
-//        } else {
-//            System.out.println("첫번째 숫자 : " + int1);
-//        }
-//
-//        // 두번째 숫자 입력하는 부분 ( 양의 정수 0 포함 )
-//        System.out.println("원하는 두번째 숫자를 입력하세요 : ");
-//        int int2 = scanner.nextInt();
-//        if(int2 < 0) {
-//            System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요.");
-//        } else {
-//            System.out.println("두번째 숫자 : " + int2);
-//        }
-//
-//
         //스캐너 생성
         Scanner scanner = new Scanner(System.in);
 
@@ -92,20 +63,7 @@ public class Main {
 
             //   int1 = 첫번째 입력받은 수 // int2 = 두번째 입력받은 수 // char1 = 입력받은 사칙연산
 
-            if (char1 == '+') {
-                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 + int2));
-            } else if (char1 == '-') {
-                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 - int2));
-            } else if (char1 == '*') {
-                System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 * int2));
-            } else if (char1 == '/') {
-                if (int2 != 0) {  // 0으로 나눌 시 경고창 필요로 if문 추가
-                    double double1 = int2; // 나누기 진행 시 소수점 표시 위해 업캐스팅 진행.
-                    System.out.println("결과 : " + int1 + char1 + int2 + "=" + (int1 / double1));
-                } else {
-                    System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
-                }
-            }
+
             if (char1 == '+') {
                 int result = int1 + int2 ;
                 System.out.println("결과 : " + result);
