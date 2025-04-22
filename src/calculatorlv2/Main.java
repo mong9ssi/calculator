@@ -8,32 +8,39 @@ public class Main {
 
         //스캐너 생성
         Scanner scanner = new Scanner(System.in);
+        //List 저장
+        Calculator calculatorResult = new Calculator();
+
+        // int , char 정의
+        double double1 = 0;
+        double double2 = 0;
+        char char1 = '+';
+
+        // 사칙연산 생성자 생성
+        Calculator calculator = new Calculator(double1 , double2);
+
 
         while (true) {
-            // int , char 정의
-            int int1 = 0;
-            int int2 = 0;
-            char char1 = '+';
 
             // 반복문 while 사용해서 bool1 = true 일떄 if 값까지 진행 / false 일데 if else 값 진행
             while (true) {
                 System.out.println("원하는 첫번째 숫자를 입력하세요 : ");
-                int1 = scanner.nextInt();
-                if (int1 < 0) {
+                double1 = scanner.nextInt();
+                if (double1 < 0) {
                     System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요."); // 음수일 때 실행
                 } else {
-                    System.out.println("첫번째 숫자 : " + int1);
+                    System.out.println("첫번째 숫자 : " + double1);
                     break; // 양수일 때 끝냄
                 }
             }
 
             while (true) {
                 System.out.println("원하는 두번째 숫자를 입력하세요 : ");
-                int2 = scanner.nextInt();
-                if (int2 < 0) {
+                double2 = scanner.nextInt();
+                if (double2 < 0) {
                     System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요."); // 음수일 때 실행
                 } else {
-                    System.out.println("두번째 숫자 : " + int2);
+                    System.out.println("두번째 숫자 : " + double2);
                     break; // 양수일 때 끝냄
                 }
             }
@@ -81,23 +88,22 @@ public class Main {
 //                }
 //            }
             if (char1 == '+'){
-                Calculator calculator = new Calculator(int1 , int2);
-                int result = calculator.sum(int1 , int2);
-                System.out.println("결과 : " + int1 + " + " + int2 + " = " + result);
+                double result = calculator.sum(double1 , double2);
+                System.out.println("결과 : " + double1 + " + " + double2 + " = " + result);
+                calculatorResult.addresult(result);
             } else if (char1 == '-') {
-                Calculator calculator = new Calculator(int1 , int2);
-                int result = calculator.sub(int1 , int2);
-                System.out.println("결과 : " + int1 + " - " + int2 + " = " + result);
+                double result = calculator.sub(double1 , double2);
+                System.out.println("결과 : " + double1 + " - " + double2 + " = " + result);
+                calculatorResult.addresult(result);
             } else if (char1 == '*') {
-                Calculator calculator = new Calculator(int1 , int2);
-                int result = calculator.mul(int1 , int2);
-                System.out.println("결과 : " + int1 + " * " + int2 + " = " + result);
+                double result = calculator.mul(double1 , double2);
+                System.out.println("결과 : " + double1 + " * " + double2 + " = " + result);
+                calculatorResult.addresult(result);
             } else if (char1 == '/') {
-                if (int2 != 0) {
-                    double double1 = int2;
-                    Calculator calculator = new Calculator(int1 , (int) double1);
-                    double result = calculator.div(int1 , double1);
-                    System.out.println("결과 : " + int1 + " / " + int2 + " = " + result);
+                if (double2 != 0) {
+                    double result = calculator.div(double1 , double2);
+                    System.out.println("결과 : " + double1 + " / " + double2 + " = " + result);
+                    calculatorResult.addresult(result);
                 } else {
                     System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
                 }
@@ -111,6 +117,11 @@ public class Main {
             } else {
                 System.out.println("처음으로 돌아갑니다.");
             }
+
+
+
+
+
         }
     }
 }
