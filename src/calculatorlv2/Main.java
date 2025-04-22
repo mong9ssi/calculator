@@ -69,27 +69,6 @@ public class Main {
             //     ㅁ 연산 오류가 발생할 경우 해당 오류에 대한 내용을 정제하여 출력합니다.
             //       ex) “나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.“
 
-//            if (char1 == '+'){
-//                double result = calculator.arithmetic(double1 , double2 , char1);
-//                System.out.println("결과 : " + double1 + char1 + double2 + " = " + result);
-//                calculatorResult.addresult(result);
-//            } else if (char1 == '-') {
-//                double result = calculator.arithmetic(double1 , double2 , char1);
-//                System.out.println("결과 : " + double1 + " - " + double2 + " = " + result);
-//                calculatorResult.addresult(result);
-//            } else if (char1 == '*') {
-//                double result = calculator.arithmetic(double1 , double2 , char1);
-//                System.out.println("결과 : " + double1 + " * " + double2 + " = " + result);
-//                calculatorResult.addresult(result);
-//            } else if (char1 == '/') {
-//                if (double2 != 0) {
-//                    double result = calculator.arithmetic(double1 , double2 , char1);
-//                    System.out.println("결과 : " + double1 + " / " + double2 + " = " + result);
-//                    calculatorResult.addresult(result);
-//                } else {
-//                    System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
-//                }
-//            }
             double result = calculator.arithmetic(double1 , double2 , char1); // Scanner 통해 입력받은 값으로 생성자 생성
             System.out.println("결과 : " + double1 + char1 + double2 + " = " + result);
 
@@ -102,6 +81,8 @@ public class Main {
             } else {
                 System.out.println("처음으로 돌아갑니다.");
             }
+
+
 
 
         }

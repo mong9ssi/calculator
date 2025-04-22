@@ -1,8 +1,5 @@
 package calculatorlv2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Calculator {
 
     // 1. 속성 - 변수 선언으로 표현할 수 있음
@@ -19,7 +16,7 @@ public class Calculator {
 
     // 3. 기능
     // 사칙연산
-    double arithmetic (double double1 , double double2 , char char1) {
+    public double arithmetic (double double1 , double double2 , char char1) {
         switch (char1) {
             case '+':
                 return double1 + double2;
@@ -31,7 +28,4 @@ public class Calculator {
                 return double1 / double2;
         } return 0;
     }
-
-
-
 }
