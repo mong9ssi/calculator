@@ -21,8 +21,7 @@ public class Main {
 
 
         while (true) {
-
-            // 반복문 while 사용해서 bool1 = true 일떄 if 값까지 진행 / false 일데 if else 값 진행
+            //while문 사용 , 음수 입력시 처음으로 반복함 , 0 또는 양수 입력시 반복문 종료
             while (true) {
                 System.out.println("원하는 첫번째 숫자를 입력하세요 : ");
                 double1 = scanner.nextInt();
@@ -30,18 +29,7 @@ public class Main {
                     System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요."); // 음수일 때 실행
                 } else {
                     System.out.println("첫번째 숫자 : " + double1);
-                    break; // 양수일 때 끝냄
-                }
-            }
-
-            while (true) {
-                System.out.println("원하는 두번째 숫자를 입력하세요 : ");
-                double2 = scanner.nextInt();
-                if (double2 < 0) {
-                    System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요."); // 음수일 때 실행
-                } else {
-                    System.out.println("두번째 숫자 : " + double2);
-                    break; // 양수일 때 끝냄
+                    break;
                 }
             }
 
@@ -53,13 +41,27 @@ public class Main {
                 System.out.println("원하는 사칙연산을 입력하세요 ( + , - , * , / ) : ");
                 String string1 = scanner.next();
                 if (string1.equals("+") || string1.equals("-") || string1.equals("*") || string1.equals("/")) {
-                    char1 = string1.charAt(0); // 사칙연산 기호로 저장
+                    char1 = string1.charAt(0);
                     System.out.println("입력한 사칙연산 : " + char1);
                     break;
                 } else {
                     System.out.println("잘못 입력했습니다. 사칙연산 기호에 맞게 다시 한번 입력해주세요.");
                 }
             }
+
+            while (true) {
+                System.out.println("원하는 두번째 숫자를 입력하세요 : ");
+                double2 = scanner.nextInt();
+                if (double2 < 0) {
+                    System.out.println("음수를 입력했습니다. 양수(0포함)를 입력해주세요."); // 음수일 때 실행
+                } else if (double2 == 0 && char1 == '/') {
+                    System.out.println("0으로 나눌 수 없습니다 다시 입력해주세요.");
+                } else {
+                    System.out.println("두번째 숫자 : " + double2);
+                    break; // 양수일 때 끝냄
+                }
+            }
+
 
             // ㅁ 위에서 입력받은 양의 정수 2개와 사칙연산 기호를 사용하여 연산을 진행한 후 결과값을 출력하기
             //     ㅁ 키워드 : if switch
@@ -68,46 +70,28 @@ public class Main {
             //     ㅁ 연산 오류가 발생할 경우 해당 오류에 대한 내용을 정제하여 출력합니다.
             //       ex) “나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.“
 
-            //   int1 = 첫번째 입력받은 수 // int2 = 두번째 입력받은 수 // char1 = 입력받은 사칙연산
-//            if (char1 == '+') {
-//                int result = int1 + int2 ;
-//                System.out.println("결과 : " + result);
-//            } else if (char1 == '-') {
-//                int result = int1 - int2 ;
-//                System.out.println("결과 : " + result);
-//            } else if (char1 == '*') {
-//                int result = int1 * int2;
-//                System.out.println("결과 : " + result);
-//            } else if (char1 == '/') {
-//                if (int2 !=0 ) {
-//                    double double1 = int2;
-//                    double result = int1 / double1;
-//                    System.out.println("결과 : " + result);
-//                } else {
-//                    System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
-//                }
-//            }
             if (char1 == '+'){
-                double result = calculator.sum(double1 , double2);
-                System.out.println("결과 : " + double1 + " + " + double2 + " = " + result);
+                double result = calculator.arithmetic(double1 , double2 , char1);
+                System.out.println("결과 : " + double1 + char1 + double2 + " = " + result);
                 calculatorResult.addresult(result);
             } else if (char1 == '-') {
-                double result = calculator.sub(double1 , double2);
+                double result = calculator.arithmetic(double1 , double2 , char1);
                 System.out.println("결과 : " + double1 + " - " + double2 + " = " + result);
                 calculatorResult.addresult(result);
             } else if (char1 == '*') {
-                double result = calculator.mul(double1 , double2);
+                double result = calculator.arithmetic(double1 , double2 , char1);
                 System.out.println("결과 : " + double1 + " * " + double2 + " = " + result);
                 calculatorResult.addresult(result);
             } else if (char1 == '/') {
                 if (double2 != 0) {
-                    double result = calculator.div(double1 , double2);
+                    double result = calculator.arithmetic(double1 , double2 , char1);
                     System.out.println("결과 : " + double1 + " / " + double2 + " = " + result);
                     calculatorResult.addresult(result);
                 } else {
                     System.out.println("나눗셈 연산에서 분보(두번째 정수)에 0이 입력될 수 없습니다.");
                 }
             }
+
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료 / 아무키나 입력시 처음으로)");
             String string1 = scanner.next();
@@ -117,9 +101,6 @@ public class Main {
             } else {
                 System.out.println("처음으로 돌아갑니다.");
             }
-
-
-
 
 
         }
